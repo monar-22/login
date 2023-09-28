@@ -8,9 +8,14 @@ const bcrypt=require("bcryptjs")
 
 const jwt=require("jsonwebtoken");
 
-const JWT_SECRET="sjdkguigjbnwhghbnsjkhihjwmjbasuhj366478892902178379%$#&^5"
+// import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 
-const mongoUrl="mongodb+srv://mona:mona%40123@cluster0.1yefeqv.mongodb.net/?retryWrites=true&w=majority";
+dotenv.config();
+
+const JWT_SECRET=process.env.JWT_SECRET;
+
+const mongoUrl=process.env.MONGOURL;
 
 mongoose.connect(mongoUrl,{
     useNewUrlParser:true
